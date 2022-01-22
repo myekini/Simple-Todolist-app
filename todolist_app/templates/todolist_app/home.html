@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!--  Bootstrap files  -->
+     <link rel="stylesheet" href="{% static '/css/bootstrap.css'%}">
+     <link rel="stylesheet" href="{% static '/js/bootstrap.js'%}">
+ 
+    <title> Home </title>
+</head>
+<body>
+    {% include 'todolist_app/base.html' %}
+    <p> hello </p>
+    <form action="{% url 'todolist_app:home'%}">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </form>
+</body>
+</html>
